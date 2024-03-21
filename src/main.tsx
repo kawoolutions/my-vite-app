@@ -1,12 +1,10 @@
-import './index.css';
+import "./index.css";
 
-import ReactDOM from 'react-dom/client'
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Link, Outlet, RouterProvider, useParams, useRouteError } from "react-router-dom";
 
-import App from './App.tsx'
+import App from "./App.tsx";
 import { useState } from "react";
-import { Simulate } from "react-dom/test-utils";
-import error = Simulate.error;
 
 function Home() {
     return (
