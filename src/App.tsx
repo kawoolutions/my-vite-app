@@ -1,29 +1,17 @@
-import { NavLink, Outlet } from "react-router-dom";
-
-import "./App.css"
+import { Provider } from 'react-redux';
+import './App.css';
+import store from './stores/store';
+import Counter from './components/Counter';
 
 function App() {
     console.log('App rendered');
+
     return (
         <>
-            <h1>App works!</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink to="/">Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/blog">Blog</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/contact">Contact</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/about">About</NavLink>
-                    </li>
-                </ul>
-            </nav>
-            <Outlet></Outlet>
+            <Provider store={store}>
+                <h1>app works!</h1>
+                <Counter />
+            </Provider>
         </>
     );
 }
