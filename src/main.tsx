@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Link, Outlet, RouterProvider, useParams, useRouteError } from "react-router-dom";
 
 import App from "./App.tsx";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 function Home() {
     return (
@@ -56,7 +56,7 @@ function AddPost() {
         return content.length < 10 ? "Content must be at least 10 characters!" : "";
     }
 
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         console.log("Adding post: ", {title, content});
     }
